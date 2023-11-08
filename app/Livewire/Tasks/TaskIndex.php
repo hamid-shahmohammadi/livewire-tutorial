@@ -10,6 +10,7 @@ use Livewire\Attributes\Rule;
 
 class TaskIndex extends Component
 {
+    
     public $tasks;
 
     #[Rule(['required','max:10','string'])]
