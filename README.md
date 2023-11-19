@@ -3,6 +3,21 @@
 make:model Task -m
 make:seeder UserSeeder TaskSeeder
 ```
+Task migration
+```
+public function up(): void
+    {
+        Schema::create('tasks', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')
+            ->constrained('users')
+            ->cascadeOnDelete();
+            $table->string('name');
+            $table->timestamps();
+        });
+    }
+
+```
 # TaskSeeder
 ```
 <?php
