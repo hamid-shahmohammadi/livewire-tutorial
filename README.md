@@ -66,3 +66,4 @@ public function run(): void
         ]);
     }
 ```
+# livewire:publish --config
