@@ -48,3 +48,21 @@ class TaskSeeder extends Seeder
     }
 }
 ```
+# UserSeedet
+```
+public function run(): void
+    {
+        User::insert([
+            [
+                'name'=>'Admin',
+                'email'=>'admin@admin.com',
+                'password'=>Hash::make('password')
+            ],
+            [
+                'name'=>'User',
+                'email'=>'user@user.com',
+                'password'=>Hash::make('password')
+            ],
+        ]);
+    }
+```
