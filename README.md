@@ -65,6 +65,6 @@ class TaskIndex extends Component
 ## /home/shah/sec/livewire/resources/views/layouts/app.blade.php
 ```
 <title>
-{{ $ttile ?? 'iranlaravel livewire' }}
+{{ $title ?? 'iranlaravel livewire' }}
 </title>
 ```
