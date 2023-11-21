@@ -20,6 +20,8 @@ Route::middleware(['auth'])->group(function () {
 ## /home/shah/sec/livewire/resources/views/layouts/app.blade.php
 ```
 <main>
+   @isset($slot)
     {{ $slot }}
+    @endisset
 </main>
 ```
