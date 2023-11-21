@@ -13,3 +13,13 @@ Route::middleware(['auth'])->group(function () {
   
 });  
 ```
+## /config/livewire.php
+```
+'layout' => 'layouts.app',
+```
+## /home/shah/sec/livewire/resources/views/layouts/app.blade.php
+```
+<main>
+    {{ $slot }}
+</main>
+```
