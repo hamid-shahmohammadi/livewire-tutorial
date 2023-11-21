@@ -43,3 +43,12 @@ class TaskCreate extends Component
     }
 }
 ```
+## php artisan livewire:make tasks.TaskIndex
+## /home/shah/sec/livewire/resources/views/livewire/tasks/task-index.blade.php
+```
+taskindex
+```
+## /home/shah/sec/livewire/app/Livewire/Tasks/TaskIndex.php
+```
+->layout('app.layout')
+```
