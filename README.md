@@ -52,3 +52,19 @@ taskindex
 ```
 ->layout('app.layout')
 ```
+## /home/shah/sec/livewire/app/Livewire/Tasks/TaskIndex.php
+```
+#[Title('Tasks -iranlaravel')]
+class TaskIndex extends Component
+{
+ public function render()
+    {
+        return view('livewire.tasks.task-create')->title('Tasks -iranlaravel');
+    }  
+```
+## /home/shah/sec/livewire/resources/views/layouts/app.blade.php
+```
+<title>
+{{ $ttile ?? 'iranlaravel livewire' }}
+</title>
+```
