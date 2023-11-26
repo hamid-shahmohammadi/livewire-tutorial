@@ -60,7 +60,7 @@ public function save (){
             'user_id'=>1,
             'name'=>$this->name
         ]);
-        // return $this->redirect(route('tasks'));
-        $this->dispatch('task-created'); 
+        return $this->redirect(route('tasks'));
+        
     }
 ```
