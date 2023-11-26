@@ -44,3 +44,23 @@
     @endforeach
 </div>
 ```
+## /home/shah/sec/livewire/app/Livewire/Tasks/TaskIndex.php
+```
+public $name;
+public function render()
+    {
+        return view('livewire.tasks.task-index')
+        ->with([
+            'button' => 'new task'
+        ]);
+    }
+public function save (){
+        $this->validate();
+        Task::create([
+            'user_id'=>1,
+            'name'=>$this->name
+        ]);
+        // return $this->redirect(route('tasks'));
+        $this->dispatch('task-created'); 
+    }
+```
