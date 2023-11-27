@@ -29,7 +29,7 @@ Route::view('profile', 'profile')
 Route::middleware(['auth'])->group(function () {
     Route::get('tasks',TaskIndex::class)->name('tasks');
     Route::get('tasks/create',TaskCreate::class);
-    Route::get('tasks/{task}',TaskShow::class);
+    Route::get('tasks/{task}',TaskShow::class)->name('tasks.show');
 });    
 
 require __DIR__.'/auth.php';

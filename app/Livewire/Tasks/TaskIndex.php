@@ -6,8 +6,9 @@ use App\Models\Task;
 use Livewire\Component;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Rule;
+use Livewire\Attributes\Title;
 
-
+#[Title('Tasks -iranlaravel')]
 class TaskIndex extends Component
 {
     
