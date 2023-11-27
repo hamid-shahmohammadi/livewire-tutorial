@@ -36,3 +36,12 @@ public function mount (Task $task){
     </x-nav-link>
 </div>
 ```
+## /home/shah/sec/livewire/resources/views/livewire/tasks/task-show.blade.php
+```
+<div>
+    <h1 class="font-bold tracking-tight text-white sm:text-6xl text-center">
+            {{$task->name}}
+    </h1>
+</div>
+
+```
