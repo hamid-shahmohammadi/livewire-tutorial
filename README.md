@@ -30,4 +30,5 @@
              wire:keydown.enter="save" />
 
 wire:keyup.0="save"
+wire:mouseenter="save"
 ```
