@@ -4,6 +4,12 @@
                         {{ __('Task') }}
                     </x-nav-link>
 ```
+## /home/shah/sec/livewire/resources/views/livewire/tasks/task-show.blade.php
+```
+<div>
+        <a wire:navigate class="text-white bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" href="{{route('tasks')}}">Back</a>
+    </div>
+```
 ## /home/shah/sec/livewire/resources/views/components/tasks/task.blade.php
 ```
  <p class="mt-2 text-md md:ml-6 md:mt-0">
