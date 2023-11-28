@@ -6,6 +6,9 @@
             </p>
 
             <p class="flex mt-2 text-md md:ml-6 md:mt-0">
+                <a href="{{route('tasks.show',$task)}}" class="whitespace-nowrap font-medium text-pink-700 hover:text-pink-600 pr-2">
+                    <x-icons.eye />
+                </a>
                 <a href="/" class="whitespace-nowrap font-medium text-pink-700 hover:text-pink-600 pr-2">
                     <x-icons.edit />
                 </a>
