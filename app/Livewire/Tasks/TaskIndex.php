@@ -25,7 +25,7 @@ class TaskIndex extends Component
     }
 
     public function save (){
-        sleep(3);
+        // sleep(3);
         dd($this->name);
     }
 }
