@@ -3,17 +3,29 @@
 namespace App\Livewire\Tasks;
 
 use App\Models\Task;
-use Livewire\Attributes\Title;
 use Livewire\Component;
+use Livewire\Attributes\On;
+use Livewire\Attributes\Rule;
+use Livewire\Attributes\Title;
+use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\Computed;
 
 #[Title('Task Index - iranlaravel')]
 class TaskIndex extends Component
 {
     public $tasks;
-    public $name;
 
+    #[Rule(['required','max:10','min:3','string'])]
+    public $name='';
+
+    #[On('task-create')]
     public function mount (){
         $this->tasks=Task::with('user')->get();
+    }
+
+    #[Computed]
+    public function task_lists (){
+        return Task::with('user')->get();
     }
 
     public function render()
@@ -25,7 +37,11 @@ class TaskIndex extends Component
     }
 
     public function save (){
-        // sleep(3);
-        dd($this->name);
+        $this->validate();
+        Task::create([
+            'user_id'=>Auth::id(),
+            'name'=>$this->name
+        ]);
+        $this->dispatch('task-created');
     }
 }
