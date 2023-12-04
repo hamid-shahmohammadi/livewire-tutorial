@@ -11,13 +11,13 @@
 ## /home/shah/sec/livewire/app/Livewire/Tasks/TaskIndex.php
 ```
 public function mount (){
-        $this->tasks = Task::with('user')->paginate(5)->toArray();
-    }
+    $this->tasks = Task::with('user')->paginate(5)->toArray();
+}
 
-    #[Computed()]
-    public function task_lists()
-    {
-        return Task::with('user')->paginate(5);
-    }
+#[Computed()]
+public function task_lists()
+{
+    return Task::with('user')->paginate(5);
+}
 
 ```
