@@ -1,4 +1,4 @@
-# 10.validation
+# 10.pagination
 ## /home/shah/sec/livewire/resources/views/livewire/tasks/task-index.blade.php
 ```
 @foreach ($tasks['data'] as $task)
@@ -21,3 +21,4 @@ public function task_lists()
 }
 
 ```
+## php artisan livewire:publish --pagination
