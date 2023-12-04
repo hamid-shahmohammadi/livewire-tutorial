@@ -34,3 +34,10 @@ public function save (){
     {{ $text }}
 </button>
 ```
+## /home/shah/sec/livewire/resources/views/livewire/tasks/task-index.blade.php
+```
+#[On('task-created')]
+public function task_event ($title){
+    dd($title);
+}
+```
