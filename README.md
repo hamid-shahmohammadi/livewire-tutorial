@@ -1,4 +1,4 @@
-# 9.pagination
+# 9.ثرثدف
 ## /home/shah/sec/livewire/resources/views/livewire/tasks/task-index.blade.php
 ```
 #[On('task-created')]
