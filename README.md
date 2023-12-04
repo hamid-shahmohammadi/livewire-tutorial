@@ -24,3 +24,13 @@ public function save (){
     {{ $text }}
 </button>
 ```
+## /home/shah/sec/livewire/resources/views/components/tasks/button.blade.php
+```
+<button
+    wire:click="$dispatch('task-created', { title: 'Post Title' })"
+    {{-- @click="$wire.dispatch('task-created', { title: 'Post Title' })"     --}}
+    type="button"
+    class="rounded-md bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-md hover:bg-blue-500">
+    {{ $text }}
+</button>
+```
