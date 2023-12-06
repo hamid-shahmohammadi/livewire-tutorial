@@ -18,9 +18,14 @@ class TaskIndex extends Component
     #[Rule(['required','max:10','min:3','string'])]
     public $name='';
 
-    #[On('task-create')]
+
     public function mount (){
         $this->tasks=Task::with('user')->get();
+    }
+
+    #[On('task-created')]
+    public function task_event ($title){
+        dd($title);
     }
 
     #[Computed]
