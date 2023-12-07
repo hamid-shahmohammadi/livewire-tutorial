@@ -5,14 +5,17 @@ namespace App\Livewire\Tasks;
 use App\Models\Task;
 use Livewire\Component;
 use Livewire\Attributes\On;
+use Livewire\WithPagination;
 use Livewire\Attributes\Rule;
 use Livewire\Attributes\Title;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Computed;
+use Illuminate\Support\Facades\Auth;
 
 #[Title('Task Index - iranlaravel')]
 class TaskIndex extends Component
 {
+    use WithPagination;
+
     public $tasks;
 
     #[Rule(['required','max:10','min:3','string'])]
@@ -20,7 +23,7 @@ class TaskIndex extends Component
 
 
     public function mount (){
-        $this->tasks=Task::with('user')->get();
+      
     }
 
     #[On('task-created')]
@@ -30,7 +33,7 @@ class TaskIndex extends Component
 
     #[Computed]
     public function task_lists (){
-        return Task::with('user')->get();
+        return Task::with('user')->paginate(4);
     }
 
     public function render()
