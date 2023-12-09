@@ -34,6 +34,10 @@ public function task_lists()
     return Task::where('name', 'like', '%'.$this->search.'%')
     ->with('user')->latest()->paginate(5);
 }
+public function placeholder()
+{
+    return view('components.skeleton');
+}
 ```
 ## resources/views/livewire/tasks/task-list.blade.php
 ```
