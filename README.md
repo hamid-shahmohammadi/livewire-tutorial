@@ -46,3 +46,14 @@ public function task_lists()
     </div>
 </div>
 ```
+## app/Livewire/Tasks/TaskIndex.php
+```
+public function save (){
+        $this->validate();
+        Task::create([
+            'user_id'=>1,
+            'name'=>$this->name
+        ]);        
+        $this->dispatch('task-created'); 
+    }
+```
