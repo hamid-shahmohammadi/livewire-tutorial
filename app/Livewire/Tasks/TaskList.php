@@ -7,7 +7,7 @@ use Livewire\Component;
 use Livewire\Attributes\On;
 use Livewire\WithPagination;
 use Livewire\Attributes\Computed;
-use Illuminate\Support\Collection;
+
 
 class TaskList extends Component
 {
@@ -15,9 +15,7 @@ class TaskList extends Component
 
     public $search;
  
-    protected $queryString = ['search'];    
-
-    public $tasks;    
+    protected $queryString = ['search'];     
 
 
     #[On('task-created')]
@@ -27,6 +25,11 @@ class TaskList extends Component
         return Task::where('name', 'like', '%'.$this->search.'%')
         ->with('user')->latest()->paginate(5);
     }
+
+    public function placeholder()
+    {
+        return view('components.skeleton');
+    }
     
 
     
@@ -35,8 +38,5 @@ class TaskList extends Component
         
         return view('livewire.tasks.task-list');
     }
-
-    public function mount (){        
-        
-    }
+   
 }

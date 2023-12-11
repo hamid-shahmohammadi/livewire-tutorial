@@ -15,7 +15,6 @@
         </div>
     </div>
 
-    <livewire:tasks.task-list lazy  />
-  
+    <livewire:tasks.task-list lazy  />  
 
 </div>

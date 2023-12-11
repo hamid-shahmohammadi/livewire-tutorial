@@ -10,29 +10,10 @@ use Livewire\Attributes\Title;
 
 #[Title('Tasks -iranlaravel')]
 class TaskIndex extends Component
-{
-    
-    
-    public $tasks;
+{   
 
     #[Rule(['required','max:10','string'])]
-    public $name='';
-
-    
-    // public function mount (){
-    //     $this->tasks = Task::with('user')->paginate(5)->toArray();
-    // }
-
-    // #[Computed()]
-    // public function task_lists()
-    // {
-    //     return Task::with('user')->paginate(5);
-    // }
-
-    // #[On('task-created')]
-    // public function task_event ($title){
-    //     dd($title);
-    // }
+    public $name='';     
 
     
     public function render()
