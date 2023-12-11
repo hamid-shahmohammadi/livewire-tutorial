@@ -15,14 +15,14 @@
 ```
 public $search;
  
-    protected $queryString = ['search'];     
+protected $queryString = ['search'];     
 
 
-    #[On('task-created')]
-    #[Computed()]
-    public function task_lists()
-    {
-        return Task::where('name', 'like', '%'.$this->search.'%')
-        ->with('user')->latest()->paginate(5);
-    }
+#[On('task-created')]
+#[Computed()]
+public function task_lists()
+{
+    return Task::where('name', 'like', '%'.$this->search.'%')
+    ->with('user')->latest()->paginate(5);
+}
 ```
