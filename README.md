@@ -1,6 +1,6 @@
 ## cmd
 ```
-php artisan livewire:form PostForm
+php artisan livewire:form TaskForm
 ```
 ## app/Livewire/Tasks/TaskIndex.php
 ```
