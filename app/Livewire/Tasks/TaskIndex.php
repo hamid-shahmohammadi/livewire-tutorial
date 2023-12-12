@@ -2,18 +2,19 @@
 
 namespace App\Livewire\Tasks;
 
+use App\Livewire\Forms\TaskForm;
 use App\Models\Task;
 use Livewire\Component;
 use Livewire\Attributes\Rule;
 use Livewire\Attributes\Title;
 
+use function Livewire\store;
 
 #[Title('Tasks -iranlaravel')]
 class TaskIndex extends Component
 {   
 
-    #[Rule(['required','max:10','string'])]
-    public $name='';     
+    public TaskForm $form;    
 
     
     public function render()
@@ -26,11 +27,7 @@ class TaskIndex extends Component
     }
 
     public function save (){
-        $this->validate();
-        Task::create([
-            'user_id'=>1,
-            'name'=>$this->name
-        ]);        
+        $this->form->store();       
         $this->dispatch('task-created'); 
     }
 }
