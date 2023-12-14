@@ -12,10 +12,15 @@ class TaskList extends Component
 {
     use WithPagination;
 
+    public $search;
+
+    protected $queryString=['search'];
+
     #[On('task-created')]
     #[Computed]
     public function task_lists (){
-        return Task::with('user')->latest()->paginate(4);
+        return Task::where('name','like','%'.$this->search.'%')
+        ->with('user')->latest()->paginate(4);
     }
 
     public function render()
