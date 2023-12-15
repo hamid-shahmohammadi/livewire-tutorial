@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Tasks;
 
+use App\Livewire\Forms\TaskForm;
 use App\Models\Task;
 use Livewire\Component;
 use Livewire\Attributes\Rule;
@@ -12,11 +13,12 @@ use Illuminate\Support\Facades\Auth;
 class TaskIndex extends Component
 {
 
+    public TaskForm $form;
 
-
-    #[Rule(['required','max:10','min:3','string'])]
-    public $name='';
-
+    public function save (){
+        $this->form->store();
+        $this->dispatch('task-created');
+    }
     public function render()
     {
         return view('livewire.tasks.task-index')
@@ -25,12 +27,5 @@ class TaskIndex extends Component
         ]);
     }
 
-    public function save (){
-        $this->validate();
-        Task::create([
-            'user_id'=>Auth::id(),
-            'name'=>$this->name
-        ]);
-        $this->dispatch('task-created');
-    }
+
 }
